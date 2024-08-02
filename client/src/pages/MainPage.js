@@ -45,13 +45,13 @@ setAmountInTargetCurrancy(res.data)
 
       
       <div>
-        <label htmlFor={date}>Date</label>
-        <input type='date' id={date} name={date} onChange={(e)=>{setDate(e.target.value)}}/>
+        <label htmlFor='date'>Date</label>
+        <input type='date' id='date' name='date' onChange={(e)=>{setDate(e.target.value)}}/>
       </div>
 
       <div>
-        <label htmlFor={sourceCurrancy}>Source Currancy</label>
-        <select onChange={(e)=>{setSourceCurrancy(e.target.value)}}>
+        <label htmlFor="sourceCurrancy">Source Currancy</label>
+        <select id="sourceCurrancy" name="sourceCurrancy" onChange={(e)=>{setSourceCurrancy(e.target.value)}}>
           <option value="" id={sourceCurrancy} name={sourceCurrancy}>Select Source Currancy</option>
           {Object.keys(currencyNames).map((currency) => (
               <option key={currency} value={currency}>{currencyNames[currency]}</option>
@@ -60,8 +60,8 @@ setAmountInTargetCurrancy(res.data)
       </div>
 
       <div>
-        <label htmlFor={targerCurrancy}>Target Currancy</label>
-        <select> onChange={(e)=>{setTargerCurrancy(e.target.value)}}
+        <label htmlFor="targerCurrancy">Target Currancy</label>
+        <select id="targerCurrancy" name="targerCurrancy" onChange={(e)=>{setTargerCurrancy(e.target.value)}}>
           <option value="" id={targerCurrancy} name={targerCurrancy}>Select Target Currancy</option>
           {Object.keys(currencyNames).map((currency) => (
               <option key={currency} value={currency}>{currencyNames[currency]}</option>
@@ -71,13 +71,19 @@ setAmountInTargetCurrancy(res.data)
 
 
       <div>
-        <label htmlFor={amountInSourceCurrancy}>Amount In Source Currancy</label>
-        <input type='text' id={amountInSourceCurrancy} name={amountInSourceCurrancy} onChange={(e)=>{setAmountInSourceCurrancy(e.target.value)}}/>
+        <label htmlFor="amountInSourceCurrancy">Amount In Source Currancy</label>
+        <input type='text' id="amountInSourceCurrancy" name="amountInSourceCurrancy" onChange={(e)=>{setAmountInSourceCurrancy(e.target.value)}}/>
       </div>
 
-      <button type>Get The Target Currancy</button>
+      <button type="submit">Get The Target Currancy</button>
       </form>
-      {amountInTargetCurrancy}
+      <div>
+        <p>
+        {amountInTargetCurrancy}
+        </p>
+     
+      </div>
+      
     </div>
   )
 }
